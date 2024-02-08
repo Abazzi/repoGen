@@ -9,7 +9,7 @@ repoGenTitle=$'
 ▐     ▐    █    ▐   █                  ▐         █    ▐   █    ▐    ▐       █   █    
            ▐        ▐                            ▐        ▐                 ▐   ▐    '
 
-while getopts "j:b:t" opt; do
+while getopts "j:b:t:" opt; do
   case $opt in
     j)
       i="$OPTARG"
@@ -19,26 +19,26 @@ while getopts "j:b:t" opt; do
       cd $i
 
       ## Copy Favicon, gitignore and prettier config 
-      cp ~/dotfiles/assets/favicon.ico favicon.ico
-      cp ~/dotfiles/gitconfig/.gitignore .gitignore
-      cp ~/dotfiles/scripts/repoGen/.prettierrc.toml .prettierrc.toml
-      cp ~/dotfiles/scripts/repoGen/javascript/.eslintrc.json .eslintrc.json 
-      cp ~/dotfiles/scripts/repoGen/javascript/webpack.production.js webpack.production.js 
-      cp ~/dotfiles/scripts/repoGen/javascript/webpack.dev.js webpack.dev.js 
-      cp ~/dotfiles/scripts/repoGen/javascript/webpack.common.js webpack.common.js 
+      cp $HOME/repoGen/favicon.ico favicon.ico
+      cp $HOME/repoGen/.gitignore .gitignore
+      cp $HOME/repoGen/.prettierrc.toml .prettierrc.toml
+      cp $HOME/repoGen/javascript/.eslintrc.json .eslintrc.json 
+      cp $HOME/repoGen/javascript/webpack.production.js webpack.production.js 
+      cp $HOME/repoGen/javascript/webpack.dev.js webpack.dev.js 
+      cp $HOME/repoGen/javascript/webpack.common.js webpack.common.js 
 
       ## Create Source folder and templates, css, and ts folders 
       mkdir src
       cd src
       mkdir templates js css
       cd templates 
-      cp ~/dotfiles/scripts/repoGen/index.html index.html
+      cp $HOME/repoGen/index.html index.html
       cd ../
       cd js
-      cp ~/dotfiles/scripts/repoGen/index.js index.js
+      cp $HOME/repoGen/index.js index.js
       cd ../
       cd css
-      cp ~/dotfiles/scripts/repoGen/styles.css styles.css 
+      cp $HOME/repoGen/styles.css styles.css 
       cd ../../
 
       ## initalize git repo and install eslint, prettier, webpack and babel 
@@ -65,10 +65,10 @@ while getopts "j:b:t" opt; do
       cd $i
 
       ## Copy Favicon, gitignore and prettier config 
-      cp ~/dotfiles/assets/favicon.ico favicon.ico
-      cp ~/dotfiles/gitconfig/.gitignore .gitignore
-      cp ~/dotfiles/scripts/repoGen/.prettierrc.toml .prettierrc.toml
-      cp ~/dotfiles/scripts/repoGen/javascript/.eslintrc.json .eslintrc.json
+      cp $HOME/repoGen/favicon.ico favicon.ico
+      cp $HOME/repoGen/.gitignore .gitignore
+      cp $HOME/repoGen/.prettierrc.toml .prettierrc.toml
+      cp $HOME/repoGen/javascript/.eslintrc.json .eslintrc.json
 
       ## Create starter files
       mkdir src
@@ -97,27 +97,26 @@ while getopts "j:b:t" opt; do
       cd $i
 
       ## Copy Favicon, gitignore and prettier config 
-      cp ~/dotfiles/assets/favicon.ico favicon.ico
-      cp ~/dotfiles/gitconfig/.gitignore .gitignore
-      cp ~/dotfiles/scripts/repoGen/.prettierrc.toml .prettierrc.toml
-      cp ~/dotfiles/scripts/repoGen/typescript/.eslintrc.json .eslintrc.json 
-      cp ~/dotfiles/scripts/repoGen/typescript/tsconfig.json tsconfig.json
-      cp ~/dotfiles/scripts/repoGen/typescript/webpack.production.js webpack.production.js 
-      cp ~/dotfiles/scripts/repoGen/typescript/webpack.dev.js webpack.dev.js 
-      cp ~/dotfiles/scripts/repoGen/typescript/webpack.common.js webpack.common.js 
+      cp $HOME/repoGen/favicon.ico favicon.ico
+      cp $HOME/repoGen/.gitignore .gitignore
+      cp $HOME/repoGen/.prettierrc.toml .prettierrc.toml
+      cp $HOME/repoGen/typescript/.eslintrc.json .eslintrc.json 
+      cp $HOME/repoGen/typescript/webpack.production.js webpack.production.js 
+      cp $HOME/repoGen/typescript/webpack.dev.js webpack.dev.js 
+      cp $HOME/repoGen/typescript/webpack.common.js webpack.common.js 
 
       ## Create starter files
       mkdir src
       cd src
       mkdir templates ts css 
       cd templates 
-      cp ~/dotfiles/scripts/repoGen/index.html index.html
+      cp $HOME/repoGen/index.html index.html
       cd ../
       cd ts
-      cp ~/dotfiles/scripts/repoGen/index.ts index.ts
+      cp $HOME/repoGen/index.ts index.ts
       cd ../
       cd css
-      cp ~/dotfiles/scripts/repoGen/styles.css styles.css
+      cp $HOME/repoGen/styles.css styles.css
       cd ../../
 
       ## initalize git repo and install eslint, prettier, webpack 
