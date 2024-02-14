@@ -41,14 +41,15 @@ while getopts "j:b:t:" opt; do
       cp $HOME/repoGen/styles.css styles.css 
       cd ../../
 
-      ## initalize git repo and install eslint, prettier, webpack and babel 
+      ## initalize repo and install eslint, prettier, and webpack 
       pnpm init 
       pnpm add -D prettier eslint-config-prettier  \
         style-loader css-loader css-minimizer-webpack-plugin \
         mini-css-extract-plugin\
         html-webpack-plugin\
-        webpack-dev-server webpack webpack-cli clean-webpack-plugin\
-        file-loader babel-loader\
+        webpack-dev-server webpack \
+        webpack-cli clean-webpack-plugin\
+        file-loader \
         eslint eslint-config-prettier eslint-plugin-prettier \
       pnpm add --save clean-webpack-plugin
       sed -i '7s/$/,/' package.json
@@ -78,7 +79,9 @@ while getopts "j:b:t:" opt; do
 
       ## initalize and install eslint, prettier
       pnpm init
-      pnpm install -d prettier eslint-config-prettier --save-dev
+      pnpm install -D prettier \
+        eslint-config-prettier eslint \
+        eslint-plugin-prettier prettier-eslint
       echo "$i Repo Generated" 
       ;;
     \?)
@@ -119,17 +122,16 @@ while getopts "j:b:t:" opt; do
       cp $HOME/repoGen/styles.css styles.css
       cd ../../
 
-      ## initalize git repo and install eslint, prettier, webpack 
-      #& typescript
+      ## initalize git repo and install eslint, prettier, webpack and typescript
       pnpm init 
       pnpm add -D prettier eslint-config-prettier  \
         style-loader css-loader css-minimizer-webpack-plugin \
         mini-css-extract-plugin\
         html-webpack-plugin\
         typescript ts-loader webpack-dev-server webpack webpack-cli\
-        file-loader\
+        file-loader prettier-eslint\
         @typescript-eslint/eslint-plugin @typescript-eslint/parser \
-        eslint-config-prettier eslint-plugin-prettier\
+        eslint-plugin-prettier\
       pnpm add --save clean-webpack-plugin
       sed -i '7s/$/,/' package.json
       sed -i '7a "dev":"webpack-dev-server --config webpack.dev.js"' package.json
