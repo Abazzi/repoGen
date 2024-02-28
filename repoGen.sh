@@ -9,7 +9,7 @@ repoGenTitle=$'
 ▐     ▐    █    ▐   █                  ▐         █    ▐   █    ▐    ▐       █   █    
            ▐        ▐                            ▐        ▐                 ▐   ▐    '
 
-while getopts "j:b:t:" opt; do
+while getopts "j:b:t:v:" opt; do
   case $opt in
     j)
       i="$OPTARG"
@@ -58,6 +58,30 @@ while getopts "j:b:t:" opt; do
       sed -i '8a "build":"webpack"' package.json
       echo "$i Repo Generated" 
       ;; 
+    v)
+      i="$OPTARG"
+      echo "$repoGenTitle" 
+      ## Run Create Vite command with param as repo title
+      pnpm create vite $i --template vanilla-ts
+      cd $i
+
+      ## Copy Favicon, gitignore and prettier config 
+      cp $HOME/repoGen/favicon.ico favicon.ico
+      cp $HOME/repoGen/.prettierrc.toml .prettierrc.toml
+      cp $HOME/repoGen/typescript/.eslintrc.json .eslintrc.json
+
+      ## install eslint and prettier
+      pnpm install -D \
+        prettier \
+        eslint-config-prettier \
+        eslint \
+        eslint-plugin-prettier \
+        @typescript-eslint/eslint-plugin \
+        @typescript-eslint/parser \
+        vite-plugin-eslint \
+
+      echo "$i Repo Generated" 
+      ;;
     b)
       i="$OPTARG"
       echo "$repoGenTitle" 
