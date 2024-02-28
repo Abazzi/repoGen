@@ -69,6 +69,7 @@ while getopts "j:b:t:v:" opt; do
       cp $HOME/repoGen/favicon.ico favicon.ico
       cp $HOME/repoGen/.prettierrc.toml .prettierrc.toml
       cp $HOME/repoGen/typescript/.eslintrc.json .eslintrc.json
+      cp $HOME/repoGen/readme_template.md README.md
 
       ## install eslint and prettier
       pnpm install -D \
