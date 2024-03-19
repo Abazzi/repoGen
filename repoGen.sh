@@ -137,3 +137,29 @@ help(){
     echo -e "\033[32m ----------------------------------------\033[0m"
     exit 1
 }
+
+if [[ $1 == "-h" ]]; then
+ help 
+fi
+if [[ $1 == "-w" && $2 == "-j" && ! -z $3 ]]; then
+ mkdir $3 
+ cd $3
+ webpack
+ webpackJSDependencies
+fi
+if [[ $1 == "-w" && $2 == "-t" && ! -z $3 ]]; then
+ mkdir $3 
+ cd $3
+ webpack
+ webpackTSDependencies 
+fi
+if [[ $1 == "-v" && $2 == "-j" && ! -z $3 ]]; then
+ mkdir $3 
+ cd $3
+ viteJS 
+fi
+if [[ $1 == "-v" && $2 == "-t" && ! -z $3 ]]; then
+mkdir $3 
+cd $3
+viteTS 
+fi
