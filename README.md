@@ -9,7 +9,7 @@ A script that generates a ready to work from Webpack project.
 | -j     | Javascript Webpack Project with Eslint & Prettier |
 | -t     | Typescript Webpack Project with Eslint & Prettier |
 | -b     | Bare Repo (No Webpack) with Eslint & Prettier     |
-
+| -v     | Vite Project with Typrscript and Eslint           |
 ## Instructions
 
 Clone Repo into Home Directory, Mark repoGen.sh as executible and run the
