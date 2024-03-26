@@ -1,18 +1,33 @@
-# repoGen.sh
+# repoGen.sh & viteDependencies.sh
 
-A script that generates a ready to work from Webpack project.
+repoGen.sh can generate a ready to work from Webpack Repo with eslint and
+prettier set up
+
+viteDependencies.sh will install eslint & prettier to a vite config and copy
+over pre-made configs for both 
 
 ## Options
+
+### repoGen.sh
 
 | Option | Description                                       |
 | ------ | ------------------------------------------------- |
 | -j     | Javascript Webpack Project with Eslint & Prettier |
 | -t     | Typescript Webpack Project with Eslint & Prettier |
-| -b     | Bare Repo (No Webpack) with Eslint & Prettier     |
-| -v     | Vite Project with Typrscript and Eslint           |
+| -h     | List Available Commands with Example |
+
+### viteDependencies.sh
+
+| Option | Description                                       |
+| ------ | ------------------------------------------------- |
+| -j     | Install Eslint & Prettier Dependencies for Vite (Javascript) |
+| -t     | Install Eslint & Prettier Dependencies for Vite (Typescript) |
+| -h     | List Available Commands with Example |
+
 ## Instructions
 
-Clone Repo into Home Directory, Mark repoGen.sh as executible and run the
-script. The script will take another parameter after the option for the name of
-the repo. Then the script will generate the repo in whatever directory you run
-it in.
+Clone Repo into Home Directory, Mark repoGen.sh and viteDependencies.sh as 
+executible and run the script. repoGen.sh will create a project based on the
+options given. 
+
+For viteDependencies.sh, go into the your vite repo, then run the script. 
