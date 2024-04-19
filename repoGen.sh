@@ -12,13 +12,13 @@ repoGenTitle=$'
 ## Initialize repo for webpack project
 webpack(){
     pnpm init 
-    pnpm add -D  \
+    pnpm install -D  \
       style-loader css-loader css-minimizer-webpack-plugin \
       mini-css-extract-plugin\
       html-webpack-plugin\
       webpack-dev-server webpack webpack-cli\
       file-loader\
-    pnpm add --save clean-webpack-plugin
+    pnpm install --save clean-webpack-plugin
     sed -i '7s/$/,/' package.json
     sed -i '7a "dev":"webpack-dev-server --config webpack.dev.js"' package.json
     sed -i '8s/$/,/' package.json
@@ -27,9 +27,9 @@ webpack(){
 
 # Install and Create all dependencies and starter files for Webpack JS repo
 webpackJSDependencies(){
-    pnpm add -D prettier eslint-config-prettier  \
-    eslint eslint-config-prettier eslint-plugin-prettier jest\
-    pnpm add --save clean-webpack-plugin
+    pnpm install -D prettier eslint-config-prettier  \
+    eslint eslint-config-prettier eslint-plugin-prettier \
+    pnpm install --save clean-webpack-plugin
     ## Copy Favicon, gitignore and prettier config 
     cp $HOME/repoGen/favicon.ico favicon.ico
     cp $HOME/repoGen/.gitignore .gitignore
@@ -56,11 +56,11 @@ webpackJSDependencies(){
 # Install and Create all dependencies and starter files for Webpack TS repo
 webpackTSDependencies(){
     ## initalize git repo and install eslint, prettier, webpack and typescript
-    pnpm add -D prettier eslint-config-prettier  \
+    pnpm install -D prettier eslint-config-prettier  \
       typescript ts-loader prettier-eslint\
       @typescript-eslint/eslint-plugin @typescript-eslint/parser \
       eslint-plugin-prettier\
-    pnpm add --save clean-webpack-plugin
+    pnpm install --save clean-webpack-plugin
 
     ## Copy Favicon, gitignore and prettier config 
     cp $HOME/repoGen/favicon.ico favicon.ico
