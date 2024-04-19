@@ -28,7 +28,7 @@ webpack(){
 # Install and Create all dependencies and starter files for Webpack JS repo
 webpackJSDependencies(){
     pnpm add -D prettier eslint-config-prettier  \
-    eslint eslint-config-prettier eslint-plugin-prettier \
+    eslint eslint-config-prettier eslint-plugin-prettier jest\
     pnpm add --save clean-webpack-plugin
     ## Copy Favicon, gitignore and prettier config 
     cp $HOME/repoGen/favicon.ico favicon.ico
